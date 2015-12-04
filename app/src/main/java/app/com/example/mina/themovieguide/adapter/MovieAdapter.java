@@ -5,10 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 import app.com.example.mina.themovieguide.Data.Movie;
+import app.com.example.mina.themovieguide.R;
 
 /**
  * Created by Mina on 04-Dec-15.
@@ -45,6 +50,25 @@ public class MovieAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+
+        if (convertView == null){
+
+            convertView = inflater.inflate(R.layout.item, null);
+
+            ImageView image = (ImageView) convertView.findViewById(R.id.item_image);
+            TextView title = (TextView) convertView.findViewById(R.id.item_text);
+
+            Movie m = list.get(position);
+
+            title.setText(m.getTitle());
+            Picasso.with(view).load(m.getImagePath()).into(image);
+
+
+
+
+        }
+
+
+        return convertView;
     }
 }
