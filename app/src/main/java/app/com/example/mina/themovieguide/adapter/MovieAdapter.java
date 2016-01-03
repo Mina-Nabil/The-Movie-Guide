@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -24,7 +23,7 @@ public class MovieAdapter extends BaseAdapter {
     private LayoutInflater inflater ;
     private Activity view;
 
-    public void MovieAdapter(Activity v, ArrayList<Movie> ls){
+    public MovieAdapter(Activity v, ArrayList<Movie> ls){
 
         this.list = ls;
         this.view = v;
@@ -51,24 +50,23 @@ public class MovieAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (convertView == null){
 
             convertView = inflater.inflate(R.layout.item, null);
 
             ImageView image = (ImageView) convertView.findViewById(R.id.item_image);
-            TextView title = (TextView) convertView.findViewById(R.id.item_text);
+            //TextView title = (TextView) convertView.findViewById(R.id.item_text);
 
             Movie m = list.get(position);
 
-            title.setText(m.getTitle());
-            Picasso.with(view).load(m.getImagePath()).into(image);
+            //title.setText(m.getTitle());
+            Picasso.with(view).cancelRequest(image);
+            Picasso.with(view).load("http://image.tmdb.org/t/p/w342/" + m.getImagePath()).into(image);
 
-
-
-
-        }
 
 
         return convertView;
     }
+
+
+
 }

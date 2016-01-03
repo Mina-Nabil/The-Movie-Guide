@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/details_rating"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/details_image"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/details_title"
+
+            android:layout_toRightOf="@+id/details_image"
+            android:layout_toEndOf="@+id/details_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/details_overview"
+            android:layout_below="@+id/details_image"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/details_year"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/details_title"
+            android:layout_toEndOf="@+id/details_title" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/details_rating"
+            android:layout_below="@+id/details_overview"
+            android:layout_centerHorizontal="true"
+            android:numStars="10"
+            android:clickable="false"
+            android:isIndicator="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/but_Fav"
+            android:layout_below="@id/details_rating"
+            android:layout_alignEnd="@id/details_rating"
+            android:layout_alignRight="@id/details_rating"
+            android:text="@string/Add_to_Fav"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/but_Fav"
+            android:id="@+id/txt_trailerlabel"
+            android:layout_alignLeft="@id/details_overview"
+            android:layout_alignStart="@id/details_overview"
+            android:text="@string/Review_Trailer"/>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_trailers"
+            android:layout_alignRight="@+id/details_overview"
+            android:layout_alignEnd="@+id/details_overview"
+            android:layout_below="@id/txt_trailerlabel"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_trailers"
+            android:id="@+id/txt_reviewlabel"
+            android:layout_alignLeft="@id/details_overview"
+            android:layout_alignStart="@id/details_overview"
+            android:text="@string/Review_Label"/>
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_reviews"
+            android:layout_alignRight="@+id/details_overview"
+            android:layout_alignEnd="@+id/details_overview"
+            android:layout_below="@id/txt_reviewlabel"
+
+            />
+
+    </RelativeLayout>
+</ScrollView>
